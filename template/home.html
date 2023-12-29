@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<x-guest-layout>
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+        <video class="mb-3 w-100 -100 " height="20%" autoplay muted preload="auto" loop poster="{% static "images/pass-5.jpg" %}">
+            
+            <source src="{% static "videos/vid-1.mp4" %}"  type="video/mp4" >
+            </video>
+          
+         
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+        
+            <form action="" method="get">
+                    <input type="text" name="" value="Your Ultimate Password Manager" class="w-100 text-center form-control-lg fs-1 fw-bolder border-info shadow-lg" id="" readonly>
+                
+            </form>
+        </div>
+    </div>
+ <div class="container">
+   
+<div class=" mt-3 mb-3 row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+ <div class="col-4">
+    <img src="{% static "images/pass-1.jpg" %}" class="w-100 h-100" alt="...">
+ </div>
+ <div class="col-8">
+    {{ APP_NAME }}
+    is dedicated to revolutionizing digital security. Our mission is to redefine password management by offering a comprehensive, user-centric platform. We're committed to safeguarding your online presence through state-of-the-art encryption, intuitive interfaces, and proactive security measures. Empowering individuals and businesses alike, MPaxx ensures that sensitive data remains secure while simplifying access across various devices. Trust MPaxx for a seamless, fortified digital experience where protection and convenience converge for your peace of mind.
+ </div>
+</div>
+<div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+<div class="col-4 ">
+    <div class="card" style="">
+        <img src="{% static "images/pass-3.jpg" %}" class="w-100 h100 card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        b5
+      </div>
+    </div>
+   
+    </div>  
+    <div class="col-4 ">
+        <div class="card" style="">
+            <img src="{% static "images/pass-2.jpg" %}" class="w-100 h-100 card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            b5
+          </div>
+        </div>
+        </div>  
+    <div class="col-4 ">
+        <div class="card" style="">
+            <img src="{% static "images/pass-4.jpg" %}" class="w-100 h-100 card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            b5
+          </div>
+        </div>
+            </div>
+</div>
+ </div>
+ <marquee behavior="" direction="horintal" class="my-2 border-info border fs-1 fw-bolder">{{ APP_NAME }} - Ultimate password Manager</marquee>
+    {% include "footer.html" %}
+</x-guest-layout>
+
+
+{% endblock %}

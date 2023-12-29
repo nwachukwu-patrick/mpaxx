@@ -1,0 +1,177 @@
+
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+      <a href="/" class="app-brand-link">
+        <span class="app-brand-logo demo me-1">
+          <span style="color: var(--bs-primary)">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="143px" height="180px" style="border: 2px solid grey;border-radius: 25px;"><path fill="#0920ed" d="M127.53,122.01c0,8.36-2.53,15.95-7.15,21.34c-4.07,4.62-9.79,7.48-16.94,7.48c-5.06,0-10.12-1.87-13.31-5.17l0,24.64c0,2.2-0.99,2.86-2.86,2.86l-7.7,0c-1.76,0-2.64-0.99-2.64-2.86l0-71.72c0-1.87,0.88-2.53,2.64-2.53l6.6,0c1.87,0,2.86,0.44,2.97,2.09l0.11,2.97c3.19-3.63,9.46-6.38,15.4-6.38c7.26,0,12.32,2.75,15.95,6.71c4.73,5.17,6.93,12.87,6.93,20.57z M113.67,122.67c0-5.17-0.99-9.68-3.19-12.76c-2.09-2.97-5.17-4.51-9.02-4.51c-4.07,0-9.13,2.64-11.33,5.39l0,23.98c2.2,2.97,6.6,5.39,10.78,5.39c3.85,0,6.93-1.76,8.8-4.07c2.75-3.41,3.96-8.03,3.96-13.42z"/><path fill="#d610e8" d="M72,136l0-50l-3,7.5l-15.5,31.5l-8,0.5l-15.5-32.5l-2.5-7l0,50l9.5,2l0,6l-27,0l0-6l8.5-2l0-54l-8.5-2l0-5.5l22.5-0.5l18.1,40l18.9-39.5l21-0.5l0,6l-8.5,2l0,54l8.5,2l0,6l-28,0l0-6z"/></svg>
+          </span>
+        </span>
+        <span class="app-brand-text demo menu-text fw-semibold ms-2">{{ APP_NAME }}</span>
+      </a>
+
+      <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+        <i class="mdi menu-toggle-icon d-xl-block align-middle mdi-20px"></i>
+      </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+      <!-- Dashboards -->
+      <li class="menu-item active open">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
+          <div data-i18n="Dashboards">Dashboards</div>
+          <div class="badge bg-danger rounded-pill ms-auto">5</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item active">
+            <a
+              href="{% url "admin" %}"
+              class="menu-link">
+              <div >Dashboard</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a
+              href="{% url "users" %}"
+              class="menu-link">
+              <div >Users</div>
+            </a>
+          </li>
+          <li class="menu-item ">
+            <a href="{% url "all password" %}" class="menu-link">
+              <div data-i18n="Analytics">All Password</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a
+              href="#"
+              class="menu-link">
+              <div data-i18n="eCommerce">Analytics</div>
+              <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a
+              href="#"
+              class="menu-link">
+              <div data-i18n="Logistics">Reports</div>
+              <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a
+              href="#"
+              class="menu-link">
+              <div data-i18n="Academy">Payments</div>
+              <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu-header fw-medium mt-4">
+        <span class="menu-header-text">Apps &amp; Pages</span>
+      </li>
+      <!-- Apps -->
+      <li class="menu-item">
+        <a
+          href="#"
+          class="menu-link">
+          <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
+          <div data-i18n="Email">Email</div>
+          <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a
+          href="{% url "chat" %}"
+          class="menu-link">
+          <i class="menu-icon tf-icons mdi mdi-message-outline"></i>
+          <div data-i18n="Chat">Chat</div>
+          <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a
+          href="#"
+          class="menu-link">
+          <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
+          <div data-i18n="Calendar">Pricing</div>
+          <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a
+          href="#"
+          class="menu-link">
+          <i class="menu-icon tf-icons mdi mdi-view-grid-outline"></i>
+          <div data-i18n="Kanban">Intergrations</div>
+          <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+        </a>
+      </li>
+      <!-- Pages -->
+      <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
+          <div data-i18n="Account Settings">Account Settings</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="{% url "account" %}" class="menu-link">
+              <div data-i18n="Account">Account</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="{% url "notification" %}" class="menu-link">
+              <div data-i18n="Notifications">Notifications</div>
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons mdi mdi-cube-outline"></i>
+          <div data-i18n="Misc">Misc</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="pages-misc-error.html" class="menu-link">
+              <div data-i18n="Error">Error</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="pages-misc-under-maintenance.html" class="menu-link">
+              <div data-i18n="Under Maintenance">Under Maintenance</div>
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      
+
+      <!-- Misc -->
+      <li class="menu-header fw-medium mt-4"><span class="menu-header-text">Misc</span></li>
+      <li class="menu-item">
+        <a
+          href="https://github.com/themeselection/{{ APP_NAME }}-bootstrap-html-admin-template-free/issues"
+          target="_blank"
+          class="menu-link">
+          <i class="menu-icon tf-icons mdi mdi-lifebuoy"></i>
+          <div data-i18n="Support">Support</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a
+          href="https://demos.themeselection.com/{{ APP_NAME }}-bootstrap-html-admin-template/documentation/"
+          target="_blank"
+          class="menu-link">
+          <i class="menu-icon tf-icons mdi mdi-file-document-multiple-outline"></i>
+          <div data-i18n="Documentation">Documentation</div>
+        </a>
+      </li>
+    </ul>
+  </aside>

@@ -1,0 +1,55 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+
+<div class="col-12">
+    <div class="card">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="table-light">
+            <tr>
+              <th class="text-truncate">User</th>
+              <th class="text-truncate">Email</th>
+              <th class="text-truncate">Role</th>
+              <th class="text-truncate">Age</th>
+              <th class="text-truncate">Balance</th>
+              <th class="text-truncate">Status</th>
+              <th class="text-truncate"></th>
+            </tr>
+          </thead>
+          <tbody>
+{% for user in users %}
+    <tr>
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="avatar avatar-sm me-3">
+              <img src="../assets/img/avatars/1.png" alt="Avatar" class="rounded-circle">
+            </div>
+            <div>
+              <h6 class="mb-0 text-truncate">{{user.first_name}} {{user.last_name}} </h6>
+              <small class="text-truncate">@{{user.username}}</small>
+            </div>
+          </div>
+        </td>
+        <td class="text-truncate"> {{user.email}} </td>
+        <td class="text-truncate">
+          <i class="mdi mdi-laptop mdi-24px text-danger me-1"></i> {{user.role}}
+        </td>
+        <td class="text-truncate">{{user.age}}</td>
+        <td class="text-truncate">34500$</td>
+        <td><span class="badge bg-label-info rounded-pill">{{user.status}}</span></td>
+        <td>
+          <a href="/manage_user/?id={{user.id}}">Manage</a><br><br>
+          <a href="/delete_user/?id={{user.id}}">Delete</a>
+        </td>
+      </tr>
+
+{% endfor %}
+            
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock content%}

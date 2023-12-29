@@ -1,0 +1,163 @@
+
+
+    <!DOCTYPE html>
+
+    <html
+      lang="en"
+      class="light-style layout-wide customizer-hide"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="../assets/"
+      data-template="vertical-menu-template-free">
+      <head>
+        <meta charset="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    
+        <title>Login</title>
+    
+        <meta name="description" content="" />
+    
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+    
+        <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+        <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+        <link rel="stylesheet" href="../assets/css/demo.css" />
+    
+        <!-- Vendors CSS -->
+        <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    
+        <!-- Page CSS -->
+        <!-- Page -->
+        <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css" />
+    
+        <!-- Helpers -->
+        <script src="../assets/vendor/js/helpers.js"></script>
+        <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+        <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+        <script src="../assets/js/config.js"></script>
+      </head>
+    
+      <body>
+        <!-- Content -->
+    
+        <div class="container-xxl">
+          <div class="authentication-wrapper authentication-basic container-p-y">
+            <div class="authentication-inner">
+              <!-- Register -->
+              <div class="card">
+                <div class="card-body">
+                  <!-- Logo -->
+                  <div class="app-brand justify-content-center">
+                    <a href="index.html" class="app-brand-link gap-2">
+                      <span class="app-brand-logo demo">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="143px" height="180px" style="border: 2px solid grey;border-radius: 25px;"><path fill="#0920ed" d="M127.53,122.01c0,8.36-2.53,15.95-7.15,21.34c-4.07,4.62-9.79,7.48-16.94,7.48c-5.06,0-10.12-1.87-13.31-5.17l0,24.64c0,2.2-0.99,2.86-2.86,2.86l-7.7,0c-1.76,0-2.64-0.99-2.64-2.86l0-71.72c0-1.87,0.88-2.53,2.64-2.53l6.6,0c1.87,0,2.86,0.44,2.97,2.09l0.11,2.97c3.19-3.63,9.46-6.38,15.4-6.38c7.26,0,12.32,2.75,15.95,6.71c4.73,5.17,6.93,12.87,6.93,20.57z M113.67,122.67c0-5.17-0.99-9.68-3.19-12.76c-2.09-2.97-5.17-4.51-9.02-4.51c-4.07,0-9.13,2.64-11.33,5.39l0,23.98c2.2,2.97,6.6,5.39,10.78,5.39c3.85,0,6.93-1.76,8.8-4.07c2.75-3.41,3.96-8.03,3.96-13.42z"/><path fill="#d610e8" d="M72,136l0-50l-3,7.5l-15.5,31.5l-8,0.5l-15.5-32.5l-2.5-7l0,50l9.5,2l0,6l-27,0l0-6l8.5-2l0-54l-8.5-2l0-5.5l22.5-0.5l18.1,40l18.9-39.5l21-0.5l0,6l-8.5,2l0,54l8.5,2l0,6l-28,0l0-6z"/></svg>
+
+                      </span>
+                      <span class="app-brand-text demo text-body fw-bold">{{ APP_NAME }}</span>
+                    </a>
+                  </div>
+                  <!-- /Logo -->
+                  <h4 class="mb-2">Welcome to {{ APP_NAME }}! 👋</h4>
+                  <p class="mb-4">Please sign-in to your account</p>
+    
+                  {% if error_message %}
+                  <div class="alert alert-danger">
+                    {{ error_message}}
+                  </div>
+                  {% endif %}
+                  <form id="formAuthentication" class="mb-3" action="" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email or Username</label>
+                      <input type="text" class="form-control" id="email" name="email_username" placeholder="Enter your email or username" autofocus="">
+                    </div>
+                    <div class="mb-3 form-password-toggle">
+                      <div class="d-flex justify-content-between">
+                        <label class="form-label" for="password">Password</label>
+                        <a href="auth-forgot-password-basic.html">
+                          <small>Forgot Password?</small>
+                        </a>
+                      </div>
+                      <div class="input-group input-group-merge">
+                        <input type="password" id="password" class="form-control" name="password" placeholder="············" aria-describedby="password">
+                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me"> Remember Me </label>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                    </div>
+                  </form>
+
+
+                  <p class="text-center">
+                    <span>New on our platform?</span>
+                    <a href="/register">
+                      <span>Create an account</span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <!-- /Register -->
+            </div>
+          </div>
+        </div>
+    
+        <!-- / Content -->
+    
+        <div class="buy-now">
+          <a
+            href="#"
+            target="_blank"
+            class="btn btn-danger btn-buy-now"
+            >Chat With US</a
+          >
+        </div>
+    
+        <!-- Core JS -->
+        <!-- build:js assets/vendor/js/core.js -->
+    
+        <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+        <script src="../assets/vendor/libs/popper/popper.js"></script>
+        <script src="../assets/vendor/js/bootstrap.js"></script>
+        <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="../assets/vendor/js/menu.js"></script>
+    
+        <!-- endbuild -->
+    
+        <!-- Vendors JS -->
+      
+      <script>
+          $('#id_username').addClass('form-control');
+          $('#id_password').addClass('form-control');
+          </script>
+      
+    
+        <!-- Main JS -->
+        <script src="../assets/js/main.js"></script>
+    
+        <!-- Page JS -->
+    
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      </body>
+    </html>
+    

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-3 col-lg-2 py-5 shadow-lg border-end border-black" style="height:90vh">
+        <div class="d-block ms-3">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                  <button class="navbar-toggler  float-end" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse" aria-controls="dashboardCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="colapse navbar-collapse" id="das]hboardCollapse">
+                    <ul class="list-unstyled">
+            <li class="nav-item my-3 "><a href="/generate-password" class="mx-auto text-center text-decoration-none btn">Generate Password</a> </li> 
+            <li class="nav-item my-3 "><a href="/view-password" class="mx-auto text-center text-decoration-none btn">View  Password</a> </li> 
+            {% comment %} <li class="nav-item my-3 "><a href="/update-password" class="mx-auto text-center text-decoration-none btn">Update Password</a> </li>  {% endcomment %}
+            {% comment %} <li class="nav-item my-3 "><a href="/delete-password" class="mx-auto text-center text-decoration-none btn">Delete Password</a> </li>  {% endcomment %}
+            <li class="nav-item my-3 "><a href="/import-password" class="mx-auto text-center text-decoration-none btn">Import Password</a> </li> 
+            <li class="nav-item my-3 "><a href="/export-password" class="mx-auto text-center text-decoration-none btn">Export Password</a> </li> 
+                    </ul>
+                </div>
+              </nav>
+
+
+        </div>
+    </div>
+    <div class="col-9 ">
+        {% block dashboard %}{% endblock dashboard %}
+
+        <footer class="bd-footer py-5 mt-5 ">
+          
+        
+            <div class="text-center mx-auto">
+        <b class="text-center">
+            Build by <a href="https://facebook.com/rickdeprogrammer" class="text-primary fw-bold text-decoration-none btn">{{ DEVELOPER }}</a> with Django  .
+        
+        </b>
+            </div>
+          </footer>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
